@@ -1,0 +1,15 @@
+getWeatherDetailsLambda:
+  handler: src/ddd/actorsApi/ui/getActorDetails.handler
+  events:
+    - http:
+        path: actors/getActorDetails
+        method: get
+        cors: true
+  package:
+    patterns:
+      - '!node_modules/**'
+  role: 
+    Fn::GetAtt:
+      - lambdaRole
+      - Arn
+  # environment:

@@ -1,0 +1,29 @@
+service: sample-ddd-architecture-flow
+frameworkVersion: "3"
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  - ${file(src/ddd/actorsApi/lambdas.yml)}
+
+stepFunctions:
+
+resources:
+  - ${file(src/ddd/resources.yml)}
+  - ${file(src/ddd/actorsApi/resources.yml)}
+
+plugins:
+  # - serverless-plugin-typescript
+  - serverless-prune-plugin
+  - serverless-esbuild
+  - serverless-dotenv-plugin
+
+custom:
+  esbuild: ${file(esbuild.config.js)}

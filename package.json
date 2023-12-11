@@ -1,0 +1,27 @@
+{
+  "name": "sample-ddd-architecture-flow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc && sls deploy",
+    "remove": "sls remove"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.4.3",
+    "esbuild": "^0.19.8",
+    "prettier": "^2.3.2",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-esbuild": "^1.50.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "serverless-prune-plugin": "^2.0.2",
+    "ts-node": "^10.9.1"
+  }
+}
